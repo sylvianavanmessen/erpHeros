@@ -1,0 +1,31 @@
+etapes a suivre erp super heroes:
+url=" "
+!!! 3choses retournée au get ou au post  ERROR SUCCESS & DATA....
++action?  list/add/detail/edit/delete +
++data (valeurs retournées?)
+router links: heroes & producers
+!!!! on indique le producteur en cliquant sur le heros ou on indique aussi les heroes en cliquant sur producteurs?
+editeur 1 & 2 retourne aussi leurs heros???
+//
+
+<--js-->
+//on declare un objet{}  --js--
+//on ajoute v-model --js--
+//if name!= ref ... verifier l element bien present --js--
+//item{} utiliser objet --js--
+
+
+<--pages-->
+//page list assigne tab [] heros et assigner valeur this heroes=.....
+//page list assigne tab [] producer et assigner valeur this producers=.....
+//detail
+//page ajouter
+//page add
+//delete
+//page edit
+
+!!!!  de quoi ai-je besoin comme variable, fonction ,methode.....
+
+
+
+!!! demander retour liste apres ex 1500 sec
