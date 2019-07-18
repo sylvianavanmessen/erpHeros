@@ -3,7 +3,7 @@ const HeroesAdd = {
         template: `
 
     <div>
-        <h1>Héros n° {{ $route.params.id }}</h1>
+        <h1>Héros n° {{ $route.params.id_superhero }}</h1>
 
     <div v-if="loading" class="loading">
         Loading...
@@ -15,13 +15,13 @@ const HeroesAdd = {
     <div>
         <div>
             <label>Prénom</label>
-            <input type="text" v-model="item.firstname" />
+            <input type="text" v-model="item.prenom" />
         </div>
         <div>
             <label>Nom</label>
-            <input type="text" v-model="item.name" />
+            <input type="text" v-model="item.nom" />
         </div>
-      
+
         <div>
             <label>Pseudo</label>
             <input type="text" v-model="item.pseudo" />
@@ -50,16 +50,16 @@ const HeroesAdd = {
     methods: {
         sendModif() {
             const params = new URLSearchParams();
-            params.append('firstname', this.item.firstname);
-            params.append('name', this.item.name);
-            params.append('adress', this.item.pseudo);
-            
+            params.append('prenom', this.item.prenom);
+            params.append('nom', this.item.nom);
+            params.append('pseudo', this.item.pseudo);
+
 
             axios.post(' ', params).then(response => {
                 console.log(response);
                 this.loading = false;
 
-                //this.item = response.data.heroes;
+                //this.item = response.data.heros;
                 //console.log(response);
 
                 if(response.data.status == 'success') {

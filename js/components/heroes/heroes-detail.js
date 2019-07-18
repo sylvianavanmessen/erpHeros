@@ -22,11 +22,11 @@ const HeroesDetail = {
 </p>
 
 
-        <router-link :to="{ name: 'heroes-detail', params: { id: item.id_heroes }}"></router-link>
+        <router-link :to="{ name: 'heroes-detail', params: { id: item.id_superhero }}"></router-link>
 
 
         <button class="edit">
-        <router-link class="edit":to="{ name: 'heroes-edit', params: { id: item.id_heroes }}"> Modifier</router-link>
+        <router-link class="edit":to="{ name: 'heroes-edit', params: { id: item.id_superhero }}"> Modifier</router-link>
         </button>
 
         <button class="delete" v-on:click="deleteHeroes">supprimer</button>
@@ -61,7 +61,7 @@ methods: {
         //this.$route.params.id
         axios.post('',params).then(response => {
 
-            this.item = response.data.heroes;
+            this.item = response.data.heros;
             //console.log(response);
         });
     },
@@ -69,10 +69,10 @@ methods: {
     deleteHeroes(){
         const params = new URLSearchParams();
                 params.append('id', this.$route.params.id);
-                params.append('firstname', this.item.firstname);
-                params.append('name', this.item.name);
-                params.append('adress', this.item.heroes);
-              
+                params.append('prenom', this.item.prenom);
+                params.append('nom', this.item.nom);
+                params.append('pseudo', this.item.pseudo);
+
 
                 axios.post('', params).then(response => {
                     //console.log(response);

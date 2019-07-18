@@ -1,41 +1,48 @@
+html {
+    font-size: 62.5%; /* Ré-équilibrage du Rem face au Pixel pour des calculs simples
+                        -10px correspond à 1.0rem.*/
+}
+
 body{
-    background-color:#e8f8fc ;
-    color:#225a68;
+    background-image: url(../img/fond/fond_5.jpg);
+    background-repeat: no-repeat;
     margin:0 ;
+    font-family: 'Marvel', arial;
 }
-
+img{
+  width: 100%;
+  height: auto;
+}
 nav.menu {
-  font-size:30px;
-  color:#225a68;
+  font-size:3rem;
   background: white;
+  height: 5rem;
 
 }
 
-
-
-h1{
-  color:#225a68;
+ h1{
+  color:blue;
   background-color: white;
-
+  text-align: center;
+  width: 100%;
+  font-size: 3rem;
 
 }
 
 ul a{
-  color:#225a68;
   text-decoration: none;
 }
 
   a{
-    color:#225a68;
+    color:red;
     text-decoration: none;
-    font-size: 20px;
-
-    margin-left: 15px;
+    font-size: 3rem;
+    margin-left: 2.5rem;
 
   }
 
   p{
-    color:#225a68;
+    color:red;
     background-color: white;
     font-size: 20px;
   }

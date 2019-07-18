@@ -7,18 +7,11 @@
 // 2. Define some routes
 const routes = [
   //path folder heroes
-    {path: '/', name: 'heroes', component: ProductList},
+    {path: '/', name: 'heroes', component: HeroesList},
     {path: '/heroes/heroes-list', name: 'heroes-list', component: HeroesList},
     {path: '/heroes/heroes-detail/:id', name: 'heroes-detail', component:HeroesDetail},
     {path: '/heroes/heroes-add', name: 'heroes-add', component:HeroesAdd},
-    {path: '/heroes/heroes-edit/:id', name: 'heroes-edit', component:HeroesEdit},
-  //path folder producer
-    {path: '/', name: 'producteurs', component: ProducerList},
-    {path: '/producer/producer-list', name: 'producer-list', component: ProducerList},
-    {path: '/producer/producer-detail/:id', name: 'producer-detail', component:ProducerDetail},
-    {path: '/producer/producer-add', name: 'producer-add', component:ProducerAdd},
-    {path: '/producer/producer-edit/:id', name: 'producer-edit', component:ProducerEdit}
-
+    {path: '/heroes/heroes-edit/:id', name: 'heroes-edit', component:HeroesEdit}
 
 ];
 

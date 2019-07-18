@@ -1,46 +1,55 @@
 etapes a suivre erp super heroes:
 
+ajouter membres git ok sauf nath
+
 producer (BDD) url=" " v2
 
-heroes url=" "
+heroes url=" " v1
 
 convention de nommage: camel case/var en francais!
 
 
 <-----------------BACK--------------------->
-!!! v1 peut on ajouter des heros ou pas ?
-!!! 3choses retournée  par lm API au get ou au post  ERROR SUCCESS & DATA....
+!!! v1 peut on ajouter des heros ou pas ?  ok  prq pas v2
+!!! Réponse API 3choses retournée  par l API au get ou au post  ERROR SUCCESS & DATA....
 
 +action?  list/add?/detail/edit/delete +
 
 !!! edit & detail les backs ont besoins de recevoir l id du front!
 +data (valeurs retournées?)
+
+superheros
+
 data heroes{
-    id_superheros
+    id_superhero
     prenom
     nom
     pseudo
-
-    V2 img?
+    id_edition response 1 or 2
 }
 
-data {
-   id_edition
-}
+
+!!! editeur pour le renvoie de donnees vers l api 'insertion nouveu heros'
+
+!!!! V2 img?
+
+
+
 
 router links: heroes & producers
 
-V2!!!! on indique aussi les heroes en cliquant sur l editeur avec une img en + ?
-editeur 1 & 2 retourne aussi tout leurs heros???
+V2!!!! on indique aussi le hero en cliquant dessus avec une img en + ?
+v3!!! editeur 1 & 2 retourne aussi tout leurs heros??? page editeur
 //
 
 <-----------------FRONT--------------------->
 
 <--pages-->
-//page list 
+//page list
 //page add ???
 //page edit
 //page delete
+//page editeur V2
 
 
 <--js-->
@@ -52,9 +61,29 @@ editeur 1 & 2 retourne aussi tout leurs heros???
 
 
 !!!!  de quoi ai-je besoin comme variable, fonction ,methode.....
-front ok 
+front ok
 
 !!! demander retour liste apres ex 1500 sec
 
 
 versions simplifiée dans un premier temps V1.
+
+
+--------------------------------------------------------------------------------------------
+
+comportement de l'erp:
+
+page list : premiere page affiche la liste de tout les super heroes
+on les obtiens en fesant un get et en affichant sur la page les id et les pseudo!
+on peux y ajouter des super heros.
+
+page add : on peux y ajouter des super heros. en cliquant sur ajouter de la page list nous arrivons sur la page add.
+nous envoyons un post avec data : prenom / nom / pseudo / editeur
+
+page detail : on arrive sur la page detail lorsque l'on click sur un hero de la page list
+sur la page detail nous recuperons le get et ou post de la page list on peut y ajouter le bouton supprimer ou modifier.
+pas besoin de page modifier une fonction sufit!
+
+page modifier nous renvoyons un post avec id / nom /prenom / pseudo / id_edition
+
+attention verifier ou afficher editeur ??? traité coté back ou front (condition)?
