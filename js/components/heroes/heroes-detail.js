@@ -1,4 +1,4 @@
-const CustomerDetail = {
+const HeroesDetail = {
     template: `
 <div>
 

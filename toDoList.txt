@@ -1,12 +1,35 @@
 etapes a suivre erp super heroes:
 url=" "
+convention de nommage: camel case
 !!! 3choses retournée au get ou au post  ERROR SUCCESS & DATA....
 +action?  list/add/detail/edit/delete +
 +data (valeurs retournées?)
 router links: heroes & producers
-!!!! on indique le producteur en cliquant sur le heros ou on indique aussi les heroes en cliquant sur producteurs?
+
+V2!!!! on indique le producteur en cliquant sur le heros ou on indique aussi les heroes en cliquant sur producteurs?
 editeur 1 & 2 retourne aussi leurs heros???
 //
+
+data heroes{
+    id
+    prenom
+    nom
+    pseudo
+    V2 img?
+}
+
+data {
+    producer 
+    1
+    2
+}
+
+<--pages-->
+//page list 
+//page add
+//page edit
+//page delete
+
 
 <--js-->
 //on declare un objet{}  --js--
@@ -15,17 +38,8 @@ editeur 1 & 2 retourne aussi leurs heros???
 //item{} utiliser objet --js--
 
 
-<--pages-->
-//page list assigne tab [] heros et assigner valeur this heroes=.....
-//page list assigne tab [] producer et assigner valeur this producers=.....
-//detail
-//page ajouter
-//page add
-//delete
-//page edit
-
 !!!!  de quoi ai-je besoin comme variable, fonction ,methode.....
-
-
+front ok 
 
 !!! demander retour liste apres ex 1500 sec
+

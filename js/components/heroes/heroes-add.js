@@ -1,5 +1,5 @@
 
-const CustomerAdd = {
+const HeroesAdd = {
         template: `
 
     <div>

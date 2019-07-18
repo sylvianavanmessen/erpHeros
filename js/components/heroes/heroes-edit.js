@@ -1,4 +1,4 @@
-const CustomerEdit = {
+const HeroesEdit = {
         template: `
     <div>
 

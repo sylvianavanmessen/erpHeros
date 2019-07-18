@@ -1,4 +1,4 @@
-const ProducerDetail = {
+const HeroesDetail = {
     template: `
 <div>
 
