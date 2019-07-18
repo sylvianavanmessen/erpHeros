@@ -2,8 +2,7 @@ const HeroesDetail = {
     template: `
 <div>
 
-<h1>Liste des Héros {{$route.params.id}}</h1>
-
+<h1>Liste des Héros {{$route.params.id_superhero}}</h1>
 
 
 <div v-if="loading" class="loading">
@@ -15,10 +14,11 @@ const HeroesDetail = {
 </div>
 
 <p v-if="item">
-    Id Client: {{ item.id_heroes }} <br />
-    Firstname: {{ item.firstname}} <br />
-    Name: {{ item.name}} <br />
+    Id Client: {{ item.id_superhero }} <br />
+    Firstname: {{ item.prenom}} <br />
+    Name: {{ item.nom}} <br />
     adress: {{ item.pseudo}} <br />
+    adress: {{ item.id_edition}} <br />
 </p>
 
 

@@ -19,15 +19,14 @@ const HeroesList = {
 
     <!-- on vérifie que heroes n'est pas vide, et puis on boucle avec v-for sur un tableau d'objet "item" -->
 
-    <ul v-if="customers" id="example-1">
+    <ul v-if="heroes" id="example-1">
         <li v-for="item in heroes">
-            <router-link :to="{ name: 'heroes-detail', params: { id: item.id_heroes}}">{{ item.name }} </router-link>
+            <router-link :to="{ name: 'heroes-detail', params: { id: item.id_superhero}}">{{ item.pseudo }} </router-link>
         </li>
     </ul>
 
   </div>
 `,
-
 
     data() {
         return {

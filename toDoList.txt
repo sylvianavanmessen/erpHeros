@@ -1,22 +1,22 @@
 etapes a suivre erp super heroes:
 
-producer (BDD) url=" "
+producer (BDD) url=" " v2
 
 heroes url=" "
 
-convention de nommage: camel case/var en anglais!
+convention de nommage: camel case/var en francais!
 
 
 <-----------------BACK--------------------->
-
+!!! v1 peut on ajouter des heros ou pas ?
 !!! 3choses retournée  par lm API au get ou au post  ERROR SUCCESS & DATA....
 
-+action?  list/add/detail/edit/delete +
++action?  list/add?/detail/edit/delete +
 
 !!! edit & detail les backs ont besoins de recevoir l id du front!
 +data (valeurs retournées?)
 data heroes{
-    id
+    id_superheros
     prenom
     nom
     pseudo
@@ -25,22 +25,20 @@ data heroes{
 }
 
 data {
-    producer 
-    1
-    2
+   id_edition
 }
 
 router links: heroes & producers
 
-V2!!!! on indique le producteur en cliquant sur le heros ou on indique aussi les heroes en cliquant sur producteurs?
-editeur 1 & 2 retourne aussi leurs heros???
+V2!!!! on indique aussi les heroes en cliquant sur l editeur avec une img en + ?
+editeur 1 & 2 retourne aussi tout leurs heros???
 //
 
 <-----------------FRONT--------------------->
 
 <--pages-->
 //page list 
-//page add
+//page add ???
 //page edit
 //page delete
 
@@ -50,6 +48,7 @@ editeur 1 & 2 retourne aussi leurs heros???
 //on ajoute v-model --js--
 //if name!= ref ... verifier l element bien present --js--
 //item{} utiliser objet --js--
+//creer condition response data 1-------- or 2-------- ?
 
 
 !!!!  de quoi ai-je besoin comme variable, fonction ,methode.....
