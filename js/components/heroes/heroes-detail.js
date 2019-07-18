@@ -2,7 +2,7 @@ const HeroesDetail = {
     template: `
 <div>
 
-<h1>Liste des Clients  {{$route.params.ip_code}}</h1>
+<h1>Liste des Héros {{$route.params.id}}</h1>
 
 
 
@@ -15,27 +15,24 @@ const HeroesDetail = {
 </div>
 
 <p v-if="item">
-    Id Client: {{ item.id_customer }} <br />
+    Id Client: {{ item.id_heroes }} <br />
     Firstname: {{ item.firstname}} <br />
     Name: {{ item.name}} <br />
-    adress: {{ item.adress}} <br />
-    city: {{ item.city}} <br />
-    zip_code: {{ item.zip_code}} <br />
-    country: {{ item.country}} <br />
+    adress: {{ item.pseudo}} <br />
 </p>
 
 
-        <router-link :to="{ name: 'customer-detail', params: { id: item.id_customer }}"></router-link>
+        <router-link :to="{ name: 'heroes-detail', params: { id: item.id_heroes }}"></router-link>
 
 
         <button class="edit">
-        <router-link class="edit":to="{ name: 'customer-edit', params: { id: item.id_customer }}"> Modifier</router-link>
+        <router-link class="edit":to="{ name: 'heroes-edit', params: { id: item.id_heroes }}"> Modifier</router-link>
         </button>
 
-        <button class="delete" v-on:click="deleteCustomer">supprimer</button>
+        <button class="delete" v-on:click="deleteHeroes">supprimer</button>
 
         <button class="return">
-        <router-link class="return" to="/customer/customer-list">Retour</router-link>
+        <router-link class="return" to="/heroes/heroes-list">Retour</router-link>
         </button>
 
         {{message}}
@@ -62,32 +59,30 @@ methods: {
         const params = new URLSearchParams();
         params.append('id', this.$route.params.id);
         //this.$route.params.id
-        axios.post('http://api.sirius-school.be/product-v2/customer/detail ',params).then(response => {
+        axios.post('',params).then(response => {
 
-            this.item = response.data.customer;
+            this.item = response.data.heroes;
             //console.log(response);
         });
     },
 
-    deleteCustomer(){
+    deleteHeroes(){
         const params = new URLSearchParams();
                 params.append('id', this.$route.params.id);
                 params.append('firstname', this.item.firstname);
                 params.append('name', this.item.name);
-                params.append('adress', this.item.adress);
-                params.append('city', this.item.city);
-                params.append('zip_code', this.item.zip_code);
-                params.append('country', this.item.country);
+                params.append('adress', this.item.heroes);
+              
 
-                axios.post('http://api.sirius-school.be/product-v2/customer/delete', params).then(response => {
+                axios.post('', params).then(response => {
                     //console.log(response);
                     this.loading = false;
 
-                    //this.item = response.data.product;
+                    //this.item = response.data.heroes;
                     //console.log(response);
 
                     if(response.data.status == 'success') {
-                        this.message = 'Client supprimé';
+                        this.message = 'Heroes supprimé';
                     }
                     else
                     {

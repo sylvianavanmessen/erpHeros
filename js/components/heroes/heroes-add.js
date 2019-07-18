@@ -3,7 +3,7 @@ const HeroesAdd = {
         template: `
 
     <div>
-        <h1>client n° {{ $route.params.id }}</h1>
+        <h1>Héros n° {{ $route.params.id }}</h1>
 
     <div v-if="loading" class="loading">
         Loading...
@@ -21,31 +21,19 @@ const HeroesAdd = {
             <label>Nom</label>
             <input type="text" v-model="item.name" />
         </div>
+      
         <div>
-            <label>Adresse</label>
-            <input type="text" v-model="item.adress" />
-        </div>
-        <div>
-            <label>City</label>
-            <input type="text" v-model="item.city" />
-        </div>
-        <div>
-            <label>Code postal</label>
-            <input type="text" v-model="item.zip_code" />
-        </div>
-        <div>
-            <label>Pays</label>
-            <input type="text" v-model="item.country" />
+            <label>Pseudo</label>
+            <input type="text" v-model="item.pseudo" />
         </div>
         <div>
             <button class="valider" v-on:click="sendModif">Valider</button>
 
             <button class= "valider">
-            <router-link class= "valider" to="/customer/customer-list">Retour</router-link>
+            <router-link class= "valider" to="/heroes/heroes-list">Retour</router-link>
             </button>
         </div>
     </div>
-
 
     {{ message }}
 </div>
@@ -55,8 +43,7 @@ const HeroesAdd = {
             loading: true,
             item: {},
             error: null,
-            message: '',
-            id:null
+            message: ''
         }
     },
 
@@ -65,20 +52,18 @@ const HeroesAdd = {
             const params = new URLSearchParams();
             params.append('firstname', this.item.firstname);
             params.append('name', this.item.name);
-            params.append('adress', this.item.adress);
-            params.append('city', this.item.city);
-            params.append('zip_code', this.item.zip_code);
-            params.append('country', this.item.country);
+            params.append('adress', this.item.pseudo);
+            
 
-            axios.post('http://api.sirius-school.be/product-v2/customer/insert ', params).then(response => {
+            axios.post(' ', params).then(response => {
                 console.log(response);
                 this.loading = false;
 
-                //this.item = response.data.product;
+                //this.item = response.data.heroes;
                 //console.log(response);
 
                 if(response.data.status == 'success') {
-                    this.message = 'Client ajouté';
+                    this.message = 'Heros ajouté';
                 }
                 else
                 {

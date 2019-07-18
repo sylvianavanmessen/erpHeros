@@ -3,7 +3,7 @@ const HeroesList = {
     template: `
     <div>
 
-    <h1>Liste des clients</h1>
+    <h1>Liste des héros</h1>
 
     <div v-if="loading" class="loading">
       Loading...
@@ -14,14 +14,14 @@ const HeroesList = {
     </div>
 
     <button class="add">
-    <router-link class="add"  to=/customer/customer-add>Ajouter client</router-link>
+    <router-link class="add"  to=/heroes/heroes-add>Ajouter héros</router-link>
     </button>
 
-    <!-- on vérifie que customer n'est pas vide, et puis on boucle avec v-for sur un tableau d'objet "item" -->
+    <!-- on vérifie que heroes n'est pas vide, et puis on boucle avec v-for sur un tableau d'objet "item" -->
 
     <ul v-if="customers" id="example-1">
-        <li v-for="item in customers">
-            <router-link :to="{ name: 'customer-detail', params: { id: item.id_customer }}">{{ item.name }} </router-link>
+        <li v-for="item in heroes">
+            <router-link :to="{ name: 'heroes-detail', params: { id: item.id_heroes}}">{{ item.name }} </router-link>
         </li>
     </ul>
 
@@ -32,7 +32,7 @@ const HeroesList = {
     data() {
         return {
             loading: true,
-            customers:{},
+            heroes:{},
             error: null
         }
     },
@@ -46,11 +46,11 @@ const HeroesList = {
     methods: {
 
         fetchData() {
-            axios.get('http://api.sirius-school.be/product-v2/customer/list').then(response => {
-                this.customers= response.data.customers;
+            axios.get('').then(response => {
+                this.customers= response.data.heroes;
                 this.loading = false;
-                //this.producers = response.data.producers;
-                //console.log(this.producers);
+                //this.heroes = response.data.heroes;
+                //console.log(this.heroes);
                 //alert("axiosok");
             });
         }

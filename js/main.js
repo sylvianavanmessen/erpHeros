@@ -6,30 +6,20 @@
 
 // 2. Define some routes
 const routes = [
-  //path folder product
-    {path: '/', name: 'produits', component: ProductList},
-    {path: '/product/product-list', name: 'product-list', component: ProductList},
-    {path: '/product/product-detail/:id', name: 'product-detail', component:ProductDetail},
-    {path: '/product/product-add', name: 'product-add', component:ProductAdd},
-    {path: '/product/product-edit/:id', name: 'product-edit', component:ProductEdit},
+  //path folder heroes
+    {path: '/', name: 'heroes', component: ProductList},
+    {path: '/heroes/heroes-list', name: 'heroes-list', component: HeroesList},
+    {path: '/heroes/heroes-detail/:id', name: 'heroes-detail', component:HeroesDetail},
+    {path: '/heroes/heroes-add', name: 'heroes-add', component:HeroesAdd},
+    {path: '/heroes/heroes-edit/:id', name: 'heroes-edit', component:HeroesEdit},
   //path folder producer
     {path: '/', name: 'producteurs', component: ProducerList},
     {path: '/producer/producer-list', name: 'producer-list', component: ProducerList},
     {path: '/producer/producer-detail/:id', name: 'producer-detail', component:ProducerDetail},
     {path: '/producer/producer-add', name: 'producer-add', component:ProducerAdd},
-    {path: '/producer/producer-edit/:id', name: 'producer-edit', component:ProducerEdit},
-  //path folder producer
-    {path: '/', name: 'clients', component: ProducerList},
-    {path: '/customer/customer-list', name: 'customer-list', component: CustomerList},
-    {path: '/customer/customer-detail/:id', name: 'customer-detail', component:CustomerDetail},
-    {path: '/customer/customer-add', name: 'customer-add', component:CustomerAdd},
-    {path: '/customer/customer-edit/:id', name: 'customer-edit', component:CustomerEdit},
-    //path folder customer
-    {path: '/', name: 'equipes', component: TeamList},
-    {path: '/team/team-list', name: 'team-list', component: TeamList},
-    {path: '/team/team-detail/:id', name: 'team-detail', component:TeamDetail},
-    {path: '/team/team-add', name: 'team-add', component:TeamAdd},
-    {path: '/team/team-edit/:id', name: 'team-edit', component:TeamEdit}
+    {path: '/producer/producer-edit/:id', name: 'producer-edit', component:ProducerEdit}
+
+
 ];
 
 

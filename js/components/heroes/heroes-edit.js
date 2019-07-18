@@ -2,7 +2,7 @@ const HeroesEdit = {
         template: `
     <div>
 
-    <h1>Mettre à jour le client n°{{ $route.params.id }} </h1>
+    <h1>Mettre à jour le héro n°{{ $route.params.id }} </h1>
 
         <div v-if="loading" class="loading">
           Loading...
@@ -25,22 +25,10 @@ const HeroesEdit = {
                 <input type="text" v-model="item.name" />
             </div>
             <div>
-                <label>Adresse</label>
-                <input type="text" v-model="item.adress" />
+                <label>Pseudo</label>
+                <input type="text" v-model="item.pseudo" />
             </div>
-            <div>
-                <label>City</label>
-                <input type="text" v-model="item.city" />
-            </div>
-            <div>
-                <label>Code postal</label>
-                <input type="text" v-model="item.zip_code" />
-            </div>
-            <div>
-                <label>Pays</label>
-                <input type="text" v-model="item.country" />
-            </div>
-
+           
         </form>
 
         <div>
@@ -64,8 +52,7 @@ const HeroesEdit = {
                 loading: true,
                 item: {},
                 error: null,
-                message: '',
-                id:null
+                message: ''
             }
         },
 
@@ -82,9 +69,9 @@ const HeroesEdit = {
                 const params = new URLSearchParams();
                 params.append('id', this.$route.params.id);
                 //this.$route.params.id
-                axios.post('http://api.sirius-school.be/product-v2/customer/detail',params).then(response => {
+                axios.post('',params).then(response => {
                     console.log(this.item);
-                    this.item = response.data.customer;
+                    this.item = response.data.heros;
                 });
             },
 
@@ -95,20 +82,18 @@ const HeroesEdit = {
                 params.append('id', this.$route.params.id);
                 params.append('firstname', this.item.firstname);
                 params.append('name', this.item.name);
-                params.append('adress', this.item.adress);
-                params.append('city', this.item.city);
-                params.append('zip_code', this.item.zip_code);
-                params.append('country', this.item.country);
+                params.append('adress', this.item.pseudo);
+              
 
-                axios.post('http://api.sirius-school.be/product-v2/customer/update', params).then(response => {
+                axios.post('', params).then(response => {
                     console.log(response);
                     this.loading = false;
 
-                    //this.item = response.data.product;
+                    //this.item = response.data.heros;
                     //console.log(response);
 
                     if(response.data.status == 'success') {
-                        this.message = 'Client mis à jour';
+                        this.message = 'Héros mis à jour';
                     }
                     else
                     {

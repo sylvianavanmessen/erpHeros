@@ -1,20 +1,26 @@
 etapes a suivre erp super heroes:
-url=" "
-convention de nommage: camel case
-!!! 3choses retournée au get ou au post  ERROR SUCCESS & DATA....
+
+producer (BDD) url=" "
+
+heroes url=" "
+
+convention de nommage: camel case/var en anglais!
+
+
+<-----------------BACK--------------------->
+
+!!! 3choses retournée  par lm API au get ou au post  ERROR SUCCESS & DATA....
+
 +action?  list/add/detail/edit/delete +
+
+!!! edit & detail les backs ont besoins de recevoir l id du front!
 +data (valeurs retournées?)
-router links: heroes & producers
-
-V2!!!! on indique le producteur en cliquant sur le heros ou on indique aussi les heroes en cliquant sur producteurs?
-editeur 1 & 2 retourne aussi leurs heros???
-//
-
 data heroes{
     id
     prenom
     nom
     pseudo
+
     V2 img?
 }
 
@@ -23,6 +29,14 @@ data {
     1
     2
 }
+
+router links: heroes & producers
+
+V2!!!! on indique le producteur en cliquant sur le heros ou on indique aussi les heroes en cliquant sur producteurs?
+editeur 1 & 2 retourne aussi leurs heros???
+//
+
+<-----------------FRONT--------------------->
 
 <--pages-->
 //page list 
@@ -43,3 +57,5 @@ front ok
 
 !!! demander retour liste apres ex 1500 sec
 
+
+versions simplifiée dans un premier temps V1.
