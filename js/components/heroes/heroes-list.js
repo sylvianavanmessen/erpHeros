@@ -5,9 +5,6 @@ const HeroesList = {
 
     <h1>Liste des héros</h1>
 
-    <div v-if="loading" class="loading">
-      Loading...
-    </div>
 
     <div v-if="error" class="error">
       {{ error }}
@@ -30,7 +27,6 @@ const HeroesList = {
 
     data() {
         return {
-            loading: true,
             heroes:{},
             error: null
         }
@@ -47,7 +43,6 @@ const HeroesList = {
         fetchData() {
             axios.get('').then(response => {
                 this.customers= response.data.heroes;
-                this.loading = false;
                 //this.heroes = response.data.heroes;
                 //console.log(this.heroes);
                 //alert("axiosok");

@@ -10,6 +10,7 @@ convention de nommage: camel case/var en francais!
 
 
 <-----------------BACK--------------------->
+
 !!! v1 peut on ajouter des heros ou pas ?  ok  prq pas v2
 !!! Réponse API 3choses retournée  par l API au get ou au post  ERROR SUCCESS & DATA....
 

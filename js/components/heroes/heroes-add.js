@@ -5,9 +5,7 @@ const HeroesAdd = {
     <div>
         <h1>Héros n° {{ $route.params.id_superhero }}</h1>
 
-    <div v-if="loading" class="loading">
-        Loading...
-    </div>
+
 
     <div v-if="error" class="error">
       {{ error }}
@@ -40,7 +38,7 @@ const HeroesAdd = {
 `,
     data() {
         return {
-            loading: true,
+           
             item: {},
             error: null,
             message: ''
@@ -57,7 +55,7 @@ const HeroesAdd = {
 
             axios.post(' ', params).then(response => {
                 console.log(response);
-                this.loading = false;
+              
 
                 //this.item = response.data.heros;
                 //console.log(response);
