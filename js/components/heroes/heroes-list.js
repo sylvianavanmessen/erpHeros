@@ -5,11 +5,6 @@ const HeroesList = {
 
     <h1>Liste des héros</h1>
 
-
-    <div v-if="error" class="error">
-      {{ error }}
-    </div>
-
     <button class="add">
     <router-link class="add"  to=/heroes/heroes-add>Ajouter héros</router-link>
     </button>
@@ -18,8 +13,9 @@ const HeroesList = {
 
     <ul v-if="heroes" id="example-1">
         <li v-for="item in heroes">
-            <router-link :to="{ name: 'heroes-detail', params: { id: item.id_superhero}}">{{ item.pseudo }} </router-link>
-        </li>
+            {{ item.prenom }}
+
+            </li>
     </ul>
 
   </div>
@@ -41,10 +37,9 @@ const HeroesList = {
     methods: {
 
         fetchData() {
-            axios.get('').then(response => {
-                this.customers= response.data.heroes;
-                //this.heroes = response.data.heroes;
-                //console.log(this.heroes);
+            axios.get('http://192.168.1.117/testphp/03_API/REMEDIATION_02/php/list.php').then(response => {
+                this.heroes= response.data.data;
+                console.log(response.data);
                 //alert("axiosok");
             });
         }
